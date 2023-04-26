@@ -21,10 +21,10 @@ RUN chmod a+x /usr/local/v2ray/entrypoint.sh
 RUN wget -q -O /tmp/v2ray-linux-64.zip https://github.com/v2fly/v2ray-core/releases/download/v4.45.0/v2ray-linux-64.zip && \
     unzip -d /usr/local/v2ray /tmp/v2ray-linux-64.zip
     
-RUN addgroup -g 10014 choreo && \
-    adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
+RUN addgroup -g 10015 choreo && \
+    adduser  --disabled-password  --no-create-home --uid 10015 --ingroup choreo choreouser
 # Set a non-root user
-USER 10014
+USER 10015
 
 ENTRYPOINT [ "/usr/local/v2ray/entrypoint.sh" ]
 CMD ["/usr/bin/supervisord"]
